@@ -1,0 +1,8 @@
+{
+  "name": "Your Name",
+  "roles": ["Frontend Developer", "Full-stack Developer", "AI Engineer"],
+  "skills": ["React", "Node.js", "JavaScript", "Prompt Engineering", "CLI tools"],
+  "experienceLevel": "fresher",
+  "locationPreference": "remote",
+  "interests": ["AI/ML", "Web Development", "Open Source"]
+}
