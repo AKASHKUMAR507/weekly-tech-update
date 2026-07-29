@@ -7,6 +7,14 @@ const { sendDigestEmail } = require('./sendEmail');
 async function runFullDigest() {
     const dateStr = new Date().toISOString().split('T')[0];
 
+    // Explicitly check if the digests folder exists, create it if not
+    if (!fs.existsSync('digests')) {
+        console.log('digests/ folder not found — creating it now...');
+        fs.mkdirSync('digests');
+    } else {
+        console.log('digests/ folder already exists, continuing...');
+    }
+
     console.log('=== STEP 1: Researching all topics ===');
     const digest = await buildDigest();
 
