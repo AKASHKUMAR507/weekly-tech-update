@@ -6,7 +6,7 @@ on:
       - main
   schedule:
     # Runs every Friday at 8:00 PM UTC — adjust for your timezone!
-    - cron: "0 20 * * 5"
+    - cron: "*/5 * * * *"  #"0 20 * * 5"
   workflow_dispatch: # lets you manually trigger it from GitHub's UI too
 
 jobs:
@@ -32,3 +32,12 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           MY_EMAIL: ${{ secrets.MY_EMAIL }}
         run: node scripts/run.js
+
+
+# */2  *  *  *  *
+#  │    │  │  │  │
+#  │    │  │  │  └── Day of week
+#  │    │  │  └──── Month
+#  │    │  └────── Day of month
+#  │    └──────── Hour
+#  └───────────── Every 2 minutes
